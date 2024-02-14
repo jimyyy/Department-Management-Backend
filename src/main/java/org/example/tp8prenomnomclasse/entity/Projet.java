@@ -20,10 +20,10 @@ public class Projet {
 
     String sujet;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     ProjetDetail projetDetail;
 
-    @ManyToMany(mappedBy = "projets",cascade = CascadeType.ALL)
+    @ManyToMany(mappedBy = "projets",fetch = FetchType.EAGER)
     Set<Equipe> equipes;
 
 
