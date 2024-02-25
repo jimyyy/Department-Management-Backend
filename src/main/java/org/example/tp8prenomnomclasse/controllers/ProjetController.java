@@ -29,6 +29,12 @@ public class ProjetController {
         return Projet;
     }
 
+    @GetMapping("/retrieve-projet/{sujet}")
+    public Optional<Projet> retrieveProjetBySujet(@PathVariable("sujet") String sujet) {
+        Optional<Projet> Projet = projetService.retrieveProjetBySujet(sujet);
+        return Projet;
+    }
+
     @PostMapping("/add-projet")
     public Projet addprojet(@RequestBody Projet b) {
         Projet projet = projetService.addProjet(b);
@@ -69,6 +75,13 @@ public class ProjetController {
     public void desaffecterProjetDetail(@PathVariable("projet-id") Long proejtId
     ) {
         projetService.DesaffecterProjetDetailFromProjet(proejtId);
+    }
+
+
+    @PostMapping("/ajouter-projet-et-projet-detail-et-assign")
+    public Projet addProjetAndProjetDetail(@RequestBody Projet p1) {
+        Projet projet = projetService.addProjetAndProjetDetailAndAssign(p1);
+        return projet;
     }
 
 

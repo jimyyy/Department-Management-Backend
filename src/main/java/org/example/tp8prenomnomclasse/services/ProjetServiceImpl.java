@@ -1,28 +1,41 @@
 package org.example.tp8prenomnomclasse.services;
 
 import lombok.AllArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.example.tp8prenomnomclasse.entity.Projet;
 import org.example.tp8prenomnomclasse.entity.ProjetDetail;
 import org.example.tp8prenomnomclasse.repository.ProjetDetailRepo;
 import org.example.tp8prenomnomclasse.repository.ProjetRepo;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 @Service
 @AllArgsConstructor
-
+@Slf4j
 public class ProjetServiceImpl implements IProjetService {
     ProjetRepo projetRepo;
     ProjetDetailRepo projetDetailRepo;
     @Override
+    //@Scheduled(fixedDelay = 10000) // 10000 millisecondes
     public List<Projet> retrieveAllProjects() {
-        return projetRepo.findAll();
+        List<Projet> listC = projetRepo.findAll();
+        for (Projet c: listC) {
+            //log.info("Chambre :" + c);
+        }
+        return listC;
     }
+
 
     @Override
     public Optional<Projet> retrieveProjet(Long projetId) {
         return projetRepo.findById(projetId);
+    }
+
+    @Override
+    public Optional<Projet> retrieveProjetBySujet(String sujet) {
+        return Optional.ofNullable(projetRepo.findProjetBySujet(sujet));
     }
 
     @Override
@@ -59,7 +72,6 @@ public class ProjetServiceImpl implements IProjetService {
 
     public Projet addProjetAndAssignProjetToProjetDetail(Projet projet, Long projetDetailId) {
         ProjetDetail projetDetail = projetDetailRepo.findById(projetDetailId).get();
-// on set le fils dans le parent :
         projet.setProjetDetail(projetDetail);
         return projetRepo.save(projet);
     }
@@ -69,6 +81,11 @@ public class ProjetServiceImpl implements IProjetService {
         projet.setProjetDetail(null);
         return projetRepo.save(projet);
     }
+
+    public Projet addProjetAndProjetDetailAndAssign(Projet projet) {
+        return projetRepo.save(projet);
+    }
+
 
 
 

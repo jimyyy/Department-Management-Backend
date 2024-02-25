@@ -21,9 +21,11 @@ public class Projet {
     String sujet;
 
     @OneToOne(cascade = CascadeType.ALL)
+    @ToString.Exclude
     ProjetDetail projetDetail;
 
     @ManyToMany(mappedBy = "projets",fetch = FetchType.EAGER)
+    @ToString.Exclude
     Set<Equipe> equipes;
 
 
