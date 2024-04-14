@@ -1,9 +1,8 @@
-package org.example.tp8prenomnomclasse.services;
+package org.example.departmentManagement.services;
 
 import lombok.AllArgsConstructor;
-import org.example.tp8prenomnomclasse.entity.Projet;
-import org.example.tp8prenomnomclasse.entity.ProjetDetail;
-import org.example.tp8prenomnomclasse.repository.ProjetDetailRepo;
+import org.example.departmentManagement.entity.ProjetDetail;
+import org.example.departmentManagement.repository.ProjetDetailRepo;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

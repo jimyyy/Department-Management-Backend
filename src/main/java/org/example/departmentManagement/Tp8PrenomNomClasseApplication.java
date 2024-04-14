@@ -1,4 +1,4 @@
-package org.example.tp8prenomnomclasse;
+package org.example.departmentManagement;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

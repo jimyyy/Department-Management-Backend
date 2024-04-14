@@ -1,7 +1,6 @@
-package org.example.tp8prenomnomclasse.services;
+package org.example.departmentManagement.services;
 
-import org.example.tp8prenomnomclasse.entity.Equipe;
-import org.example.tp8prenomnomclasse.entity.ProjetDetail;
+import org.example.departmentManagement.entity.Equipe;
 
 import java.util.List;
 import java.util.Optional;

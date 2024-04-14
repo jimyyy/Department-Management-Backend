@@ -1,4 +1,4 @@
-package org.example.tp8prenomnomclasse.config;
+package org.example.departmentManagement.config;
 
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.JoinPoint;
@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
 @Aspect
 @Slf4j
 public class ConfigAop {
-    @Before("execution(* org.example.tp8prenomnomclasse.services.*.retrieve*())")
+    @Before("execution(* org.example.departmentManagement.services.*.retrieve*())")
     public void logMethodEntry(JoinPoint joinPoint) {
         String name = joinPoint.getSignature().getName();
         log.info("C'est parti");

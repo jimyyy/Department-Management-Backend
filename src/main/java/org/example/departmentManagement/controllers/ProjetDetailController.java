@@ -1,8 +1,8 @@
-package org.example.tp8prenomnomclasse.controllers;
+package org.example.departmentManagement.controllers;
 
 import lombok.AllArgsConstructor;
-import org.example.tp8prenomnomclasse.entity.ProjetDetail;
-import org.example.tp8prenomnomclasse.services.IProjetDetailService;
+import org.example.departmentManagement.entity.ProjetDetail;
+import org.example.departmentManagement.services.IProjetDetailService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;

@@ -1,4 +1,4 @@
-package org.example.tp8prenomnomclasse.entity;
+package org.example.departmentManagement.entity;
 
 import jakarta.persistence.*;
 import lombok.*;

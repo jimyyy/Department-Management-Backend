@@ -1,4 +1,4 @@
-package org.example.tp8prenomnomclasse.entity;
+package org.example.departmentManagement.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
